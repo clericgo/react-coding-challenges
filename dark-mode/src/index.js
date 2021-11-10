@@ -6,10 +6,10 @@ import './styles/_dark-mode.scss';
 import Routes from './routes';
 
 ReactDOM.render(
-  <div id="theme">
-  <AppContainer>
-    <Routes />
-  </AppContainer>
+  <div>
+    <AppContainer>
+      <Routes />
+    </AppContainer>
   </div>,
   document.getElementById('root')
   
