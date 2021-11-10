@@ -8,16 +8,11 @@ function App() {
   
   const [darkTheme, setDarkTheme] = useState(false);
 
-  const toDarkTheme = (e) => {
-    e.preventDefault();
-    setDarkTheme(true);
-    alert(1);
+  const toDarkTheme = () => {
+    alert("to Dark");
   }
-
-  const toSunTheme = (e) => {
-    e.preventDefault();
-    setDarkTheme(false);
-    alert(2);
+  const toSunTheme = () => {
+    alert("to Sun");
   }
 
   return (
@@ -28,14 +23,11 @@ function App() {
         </div>
 
         {/* --The button that should toggle dark mode-- */}
-        {darkTheme ?
-          <button id="button-dark" className="app__dark-mode-btn icon level-right" onClick={toDarkTheme}>
-            <FontAwesomeIcon icon={faMoon} />
-          </button>
-          :
-          <button id="button-sun" className="app__dark-mode-btn icon level-right" onClick={toSunTheme}>
-            <FontAwesomeIcon icon={faSun} />
-          </button>
+        { 
+          <button className="app__dark-mode-btn icon level-right" onClick={toDarkTheme} onClick={() => setDarkTheme(!darkTheme)}>
+					  {darkTheme && <a onClick={toDarkTheme}><FontAwesomeIcon icon={faSun} /></a>}
+					  {!darkTheme && <a onClick={toSunTheme}><FontAwesomeIcon icon={faMoon} /></a>}
+				  </button>
         }
 
       </div>
