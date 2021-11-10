@@ -6,20 +6,10 @@ import '../styles/_app.scss';
 
 function App() {
   
-  let theme = ""
   const [darkTheme, setDarkTheme] = useState(false);
 
-  const toDarkTheme = () => {
-    theme = "Dark"
-    alert(theme);
-  }
-  const toSunTheme = () => {
-    theme = ""
-    alert(theme);
-  }
-
   return (
-    <div className={theme ? "dark-mode" : ""}>
+    <div className={darkTheme ? "dark-mode" : ""}>
       <div className="app">
         <div className="level">
           <div>
@@ -28,9 +18,9 @@ function App() {
 
           {/* --The button that should toggle dark mode-- */}
           { 
-            <button className="app__dark-mode-btn icon level-right" onClick={toDarkTheme} onClick={() => setDarkTheme(!darkTheme)}>
-              {darkTheme && <a onClick={toDarkTheme}><FontAwesomeIcon icon={faSun} /></a>}
-              {!darkTheme && <a onClick={toSunTheme}><FontAwesomeIcon icon={faMoon} /></a>}
+            <button className="app__dark-mode-btn icon level-right" onClick={setDarkTheme} onClick={() => setDarkTheme(!darkTheme)}>
+              {darkTheme && <FontAwesomeIcon icon={faSun} style={{color: '#FFA500'}}/>}
+              {!darkTheme && <FontAwesomeIcon icon={faMoon} />}
             </button>
           }
 
