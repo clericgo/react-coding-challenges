@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon } from '@fortawesome/free-solid-svg-icons';
 import { faSun } from '@fortawesome/free-solid-svg-icons';
@@ -6,10 +6,18 @@ import '../styles/_app.scss';
 
 function App() {
   
-  function toggleTheme() {
-    //e.preventDefault();
-    //var miusuario = this.usuario.current.value;
-    alert(1)
+  const [darkTheme, setDarkTheme] = useState(false);
+
+  const toDarkTheme = (e) => {
+    e.preventDefault();
+    setDarkTheme(true);
+    alert(1);
+  }
+
+  const toSunTheme = (e) => {
+    e.preventDefault();
+    setDarkTheme(false);
+    alert(2);
   }
 
   return (
@@ -20,9 +28,15 @@ function App() {
         </div>
 
         {/* --The button that should toggle dark mode-- */}
-        <button className="app__dark-mode-btn icon level-right" onClick={this.toggleTheme}>
-          <FontAwesomeIcon icon={faMoon} />
-        </button>
+        {darkTheme ?
+          <button id="button-dark" className="app__dark-mode-btn icon level-right" onClick={toDarkTheme}>
+            <FontAwesomeIcon icon={faMoon} />
+          </button>
+          :
+          <button id="button-sun" className="app__dark-mode-btn icon level-right" onClick={toSunTheme}>
+            <FontAwesomeIcon icon={faSun} />
+          </button>
+        }
 
       </div>
 
