@@ -19,12 +19,19 @@ function Messages() {
   const [playReceive] = useSound(config.RECEIVE_AUDIO_URL);
   const { setLatestMessage } = useContext(LatestMessagesContext);
 
+  const message = ""
+  const onChangeMessage = ""
+
+  sendMessage(message){
+    //user-message-input
+  }
+
   return (
     <div className="messages">
       <Header />
       <div className="messages__list" id="message-list">
       </div>
-      {/*<Footer message={message} sendMessage={sendMessage} onChangeMessage={onChangeMessage} />*/}
+      <Footer message={message} sendMessage={sendMessage} onChangeMessage={onChangeMessage} />
     </div>
   );
 }
