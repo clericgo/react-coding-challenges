@@ -8,7 +8,7 @@ import { SpotifyApiContext } from 'react-spotify-api';
 ReactDOM.render(
   <React.StrictMode>
     <CoreLayout>
-      <SpotifyApiContext.Provider value={token}>
+      <SpotifyApiContext.Provider>
         <Routes />
       </SpotifyApiContext.Provider>
     </CoreLayout>

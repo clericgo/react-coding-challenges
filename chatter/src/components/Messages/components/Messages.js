@@ -24,7 +24,7 @@ function Messages() {
       <Header />
       <div className="messages__list" id="message-list">
       </div>
-      <Footer message={message} sendMessage={sendMessage} onChangeMessage={onChangeMessage} />
+      {/*<Footer message={message} sendMessage={sendMessage} onChangeMessage={onChangeMessage} />*/}
     </div>
   );
 }
